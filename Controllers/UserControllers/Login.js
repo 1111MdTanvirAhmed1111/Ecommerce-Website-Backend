@@ -19,7 +19,7 @@ module.exports = async (req,res)=>{
         if(!PassCorrect){
             res.send({"messege":"Password Is Incorrect","status":404})
         }else{
-            const token  = jwt.sign({_id:DbUser._id},process.env.JWT_code)
+            const token  = await jwt.sign({_id:DbUser._id},process.env.JWT_code)
             
             res.send({"messege":"Login Succeed","status":200,"jwt":token})
             
