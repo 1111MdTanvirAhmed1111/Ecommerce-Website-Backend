@@ -4,7 +4,7 @@ const {uploadSingle} = require('./middlewares/multer')
 const { CreateProduct, GetAllProducts ,GetOneProduct,DeleteOneProduct,UpdateOneProduct } = require('./Controllers/ProductControllers')
 const { addCatagory, DeleteCatagory, ReadCatagory } = require('./Controllers/CatagoryControllers')
 const { cartController } = require('./Controllers/CartController')
-const { GetUser, PutUser } = require('./Controllers/UserControllers/UserControllers')
+const { GetUser, PutUser, cngPass } = require('./Controllers/UserControllers/UserControllers')
 const { isAdmin } = require('./middlewares/IsAdmin')
 
 
@@ -16,7 +16,7 @@ router.post('/user/register',Register)
 router.post('/user/login',Login)
 router.get('/user',GetUser)
 router.put('/user',PutUser)
-
+router.put('/user/cngpass' , cngPass)
 
 
 // Products Zone
